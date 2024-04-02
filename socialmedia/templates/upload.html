@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1>Uplaod Posts/{{ user_upload.username }}</h1>
+                <a href="{% url 'homepage' %}">Home</a>
+                <label for="">Post name</label>
+                <input type="text" name="postname">
+
+                <label for="">Image uplaod</label>
+                <input type="file" name="postimage">
+
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

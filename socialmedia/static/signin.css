@@ -1,0 +1,19 @@
+body{
+    background-color: rgba(rgb(116, 64, 64), green, blue);
+}
+form{
+    padding:50vh;
+    height:50%;
+    width:50%;
+    color: rgb(red, green, rgb(249, 249, 252));
+
+    border:2px solid red;
+}   
+input{
+    box-sizing: border-box;
+    width: 250px;
+    margin:10px;
+}
+button{
+    float:center;
+}

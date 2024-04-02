@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav{
+        height:100px;
+        background-color: beige;
+    }
+    img{
+        height: 75px;
+        width:100px;
+        border-radius: 50%;
+        margin-top: 10px;
+
+    }
+</style>
+<body>
+    <nav>
+        <ul>
+            <img src="{{ user_home.image.url }}" alt=""></li>
+            <li><a href="{% url 'profile' %}">{{ user_home.username}}</a></li>
+            <li><a href="{% url 'upload' %}">Upload</a></li>
+            <li><a href="{% url 'Logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+    <div>
+        <div>
+            {% for post in posts reversed %}
+            <h1>{{post.post_name}}</h1>
+            <img src="{{post.post_image.url}}" alt="no image" height="300px" width="300px">
+            <h4>{{post.date}}</h4>
+            <button><a href="/like_post?post_id={{post.post_id}}">Like</a></button>
+            {% if post.no_of_likes == 0 %}
+            <h3>No likes</h3>
+            {% elif post.no_of_likes == 1 %}
+            <h3>1 like</h3>
+            {% else %}
+            <h3>{{ post.no_of_likes }} likes</h3>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1>Users follow</h1>
+            <img src="" alt="">
+        </div>
+    </div>
+</body>
+</html>
